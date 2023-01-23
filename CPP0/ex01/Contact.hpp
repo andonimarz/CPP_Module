@@ -6,31 +6,31 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:31:13 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/23 18:44:00 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:47:37 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 # define CONTACT_H
 
+# include <iostream>
+
 class Contact
 {
 public:
-
-	int publicFoo;
-
 	Contact(void);
 	~Contact(void);
 
-	void publicBar(void) const;
-
+	std::string	getFirstName(void) const;
+	void		setFirstName(const std::string str);
 private:
 
-	char	*firstname;
-	char	*lastname;
-	char	*nickname;
-	char	*phonenumber;
-	char	*darkestsecret;
+	int			index;
+	std::string	FirstName;
+	std::string	LastName;
+	std::string	NickName;
+	std::string	PhoneNumber;
+	std::string	DarkestSecret;
 };
 
 #endif
