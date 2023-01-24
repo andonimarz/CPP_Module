@@ -6,14 +6,16 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/23 19:00:35 by amarzana         ###   ########.fr        #
+#    Updated: 2023/01/24 17:46:22 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = phonebook
 
-SRC = 	./main.cpp
+SRC = 	main.cpp \
+		PhoneBook.cpp \
+		Contact.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

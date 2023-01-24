@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:31:13 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/23 19:47:37 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:08:34 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
 
 	std::string	getFirstName(void) const;
 	void		setFirstName(const std::string str);
+	void		setInfo(int index);
+	std::string	getbuff(std::string msg) const;
 private:
 
 	int			index;

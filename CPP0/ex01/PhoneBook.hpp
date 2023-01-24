@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:30:59 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/23 19:09:45 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:16:01 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 class PhoneBook
 {
 	public:
-
-		int publicFoo;
-
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void publicBar(void) const;
+		void	addcontact(void);
+		void	print(void);
+		//void	printcontacts(void) const;
+		//void	search(void) const;
 
 	private:
-		Contact Contact[8];
+		Contact contacts[8];
 		int		size;
 		int		index;
 };
