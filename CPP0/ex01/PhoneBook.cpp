@@ -16,10 +16,14 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::addcontact(void)
 {
-	//std::cout << "Size is " << this->size << std::endl;
 	this->contacts[this->index % 8].setInfo(this->index % 8);
 	this->index++;
 }
 
-//void	printPhoneBooks(void) const
+void	PhoneBook::printcontacts(void)
+{
+	for (int i = 0; i < 8; i++)
+		this->contacts[i].print();
+}
+
 //void	search(void) const

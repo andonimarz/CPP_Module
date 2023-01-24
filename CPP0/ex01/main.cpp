@@ -6,14 +6,12 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:34:08 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 18:22:44 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:32:58 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.hpp"
-
-//FT_PRINTALL para pruebas ????
 
 int	main(int argc, char **argv)
 {
@@ -31,7 +29,7 @@ int	main(int argc, char **argv)
 			if (buff == "ADD")
 				book.addcontact();
 			else if (buff == "SEARCH")
-				std::cout << "ft_search" << std::endl;
+				book.printcontacts();
 			else if (buff == "EXIT")
 				break ;	
 			else

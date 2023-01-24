@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:36:57 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 18:21:48 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:31:24 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,32 @@ void	Contact::setFirstName(const std::string str)
 	return;
 }
 
-std::string Contact::getbuff(std::string msg) const {
+static int buffisnum(std::string buff)
+{
+    int i;
+
+    i = 0;
+    while (buff[i])
+    {
+		if (buff[i] < '0' || buff[i] > '9')
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+std::string Contact::getbuff(std::string msg, int num) const {
     std::string buff;
     bool        valid = false;
     do
     {
         std::cout << msg << std::flush;
         std::cin >> buff;
-        if (!buff.empty())
+        if (!buff.empty() && (num == 0 || (num == 1 && buffisnum(buff))))
             valid = true;
         else {
             std::cin.clear();
-            std::cout << "Error: Invalid input; please try again." << std::endl;
+            std::cout << "Error: Invalid input" << std::endl;
         }
     } while (!valid);
     return (buff);
@@ -58,9 +72,19 @@ std::string Contact::getbuff(std::string msg) const {
 void	Contact::setInfo(int index)
 {
 	this->index = index;
-	this->FirstName = this->getbuff("Enter the first name: ");
-	this->LastName = this->getbuff("Enter the last name: ");
-	this->NickName = this->getbuff("Enter the nickname: ");
-	this->PhoneNumber = this->getbuff("Enter the phone number: "); //A checker needed
-	this->DarkestSecret = this->getbuff("Enter the darkest secret: ");
+	this->FirstName = this->getbuff("Enter the first name: ", 0);
+	this->LastName = this->getbuff("Enter the last name: ", 0);
+	this->NickName = this->getbuff("Enter the nickname: ", 0);
+	this->PhoneNumber = this->getbuff("Enter the phone number: ", 1);
+	this->DarkestSecret = this->getbuff("Enter the darkest secret: ", 0);
+}
+
+void	Contact::print(void)
+{
+	std::cout << this->index << std::endl;
+	std::cout << this->FirstName << std::endl;
+	std::cout << this->LastName << std::endl;
+	std::cout << this->NickName << std::endl;
+	std::cout << this->PhoneNumber << std::endl;
+	std::cout << this->DarkestSecret << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:31:13 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 18:08:34 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:22:34 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Contact
 public:
 	Contact(void);
 	~Contact(void);
-
+	void		print(void);
 	std::string	getFirstName(void) const;
 	void		setFirstName(const std::string str);
 	void		setInfo(int index);
-	std::string	getbuff(std::string msg) const;
+	std::string	getbuff(std::string msg, int num) const;
 private:
 
 	int			index;

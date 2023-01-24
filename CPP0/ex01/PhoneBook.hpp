@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:30:59 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 18:16:01 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/24 22:03:42 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook
 
 		void	addcontact(void);
 		void	print(void);
-		//void	printcontacts(void) const;
+		void	printcontacts(void);
 		//void	search(void) const;
 
 	private:
