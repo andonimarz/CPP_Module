@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:34:08 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 22:32:58 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:59:17 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ int	main(int argc, char **argv)
 			std::cout << "Input a command: ";
 			std::cin >> buff;
 			if (buff == "ADD")
-				book.addcontact();
+				book.addContact();
 			else if (buff == "SEARCH")
-				book.printcontacts();
+			{
+				book.printContacts();
+				book.display();
+			}
 			else if (buff == "EXIT")
 				break ;	
 			else

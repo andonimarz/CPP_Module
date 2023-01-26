@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:31:13 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/24 22:22:34 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:40:29 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 # define CONTACT_H
 
 # include <iostream>
+# include <iomanip>
 
 class Contact
 {
 public:
 	Contact(void);
 	~Contact(void);
-	void		print(void);
-	std::string	getFirstName(void) const;
-	void		setFirstName(const std::string str);
-	void		setInfo(int index);
-	std::string	getbuff(std::string msg, int num) const;
+	void		setInfo(int index, std::string *info);
+	std::string truncInfo(std::string info) const;
+	void		displayList(void);
+	void		displayContact(void);
 private:
 
 	int			index;
