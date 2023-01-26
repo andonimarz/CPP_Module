@@ -6,11 +6,10 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:36:57 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 13:09:20 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:40:10 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact(void)
