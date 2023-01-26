@@ -3,8 +3,7 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->index = 0;
-	this->size = 0;
+	this->_index = 0;
 	return;
 }
 
@@ -44,18 +43,18 @@ std::string PhoneBook::getbuff(std::string msg, int num) const
 
 void	PhoneBook::getInfo(void)
 {
-	this->info[0] = this->getbuff("Enter the first name: ", 0);
-	this->info[1] = this->getbuff("Enter the last name: ", 0);
-	this->info[2] = this->getbuff("Enter the nickname: ", 0);
-	this->info[3] = this->getbuff("Enter the phone number: ", 1);
-	this->info[4] = this->getbuff("Enter the darkest secret: ", 0);
+	this->_info[0] = this->getbuff("Enter the first name: ", 0);
+	this->_info[1] = this->getbuff("Enter the last name: ", 0);
+	this->_info[2] = this->getbuff("Enter the nickname: ", 0);
+	this->_info[3] = this->getbuff("Enter the phone number: ", 1);
+	this->_info[4] = this->getbuff("Enter the darkest secret: ", 0);
 }
 
 void	PhoneBook::addContact(void)
 {
 	getInfo();
-	this->contacts[this->index % 8].setInfo(this->index % 8, this->info);
-	this->index++;
+	this->_contacts[this->_index % 8].setInfo(this->_index % 8, this->_info);
+	this->_index++;
 }
 
 void	PhoneBook::printContacts(void)
@@ -66,7 +65,7 @@ void	PhoneBook::printContacts(void)
 	std::cout << "|" << std::setw(10) << "NICKNAME" << std::flush;
 	std::cout << "|" << std::endl;
 	for (int i = 0; i < 8; i++)
-		this->contacts[i].displayList();
+		this->_contacts[i].displayList();
 }
 
 void	PhoneBook::display(void)
@@ -79,7 +78,7 @@ void	PhoneBook::display(void)
 		std::cin >> buff;
 		if (buff.size() == 1 && buff[0] >= '0' && buff[0] <= '7')
 		{
-			this->contacts[buff[0] - '0'].displayContact();
+			this->_contacts[buff[0] - '0'].displayContact();
 			break ;
 		}
 		else
