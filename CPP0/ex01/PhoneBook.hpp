@@ -6,9 +6,12 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:30:59 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 13:01:21 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:10:20 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
 #include "Contact.hpp"
 
@@ -19,11 +22,13 @@ class PhoneBook
 		~PhoneBook(void);
 		void		addContact(void);
 		void		printContacts(void);
-		void		getInfo(void);
-		std::string	getbuff(std::string msg, int num) const;
 		void		display(void);
 	private:
 		Contact 	_contacts[8];
 		std::string	_info[5];
 		int			_index;
+		void		_getInfo(void);
+		std::string	_getbuff(std::string msg, int num) const;
 };
+
+#endif

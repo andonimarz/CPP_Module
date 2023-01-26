@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:31:13 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 13:01:34 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:09:46 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Contact
 		Contact(void);
 		~Contact(void);
 		void		setInfo(int index, std::string *info);
-		std::string truncInfo(std::string info) const;
 		void		displayList(void);
 		void		displayContact(void);
 	private:
@@ -32,6 +31,7 @@ class Contact
 		std::string	_NickName;
 		std::string	_PhoneNumber;
 		std::string	_DarkestSecret;
+		std::string _truncInfo(std::string info) const;
 };
 
 #endif

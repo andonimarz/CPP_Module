@@ -25,7 +25,7 @@ static int buffisnum(std::string buff)
 	return (1);
 }
 
-std::string PhoneBook::getbuff(std::string msg, int num) const
+std::string PhoneBook::_getbuff(std::string msg, int num) const
 {
 	std::string buff;
 	
@@ -41,18 +41,18 @@ std::string PhoneBook::getbuff(std::string msg, int num) const
 	} while (1);
 }
 
-void	PhoneBook::getInfo(void)
+void	PhoneBook::_getInfo(void)
 {
-	this->_info[0] = this->getbuff("Enter the first name: ", 0);
-	this->_info[1] = this->getbuff("Enter the last name: ", 0);
-	this->_info[2] = this->getbuff("Enter the nickname: ", 0);
-	this->_info[3] = this->getbuff("Enter the phone number: ", 1);
-	this->_info[4] = this->getbuff("Enter the darkest secret: ", 0);
+	this->_info[0] = this->_getbuff("Enter the first name: ", 0);
+	this->_info[1] = this->_getbuff("Enter the last name: ", 0);
+	this->_info[2] = this->_getbuff("Enter the nickname: ", 0);
+	this->_info[3] = this->_getbuff("Enter the phone number: ", 1);
+	this->_info[4] = this->_getbuff("Enter the darkest secret: ", 0);
 }
 
 void	PhoneBook::addContact(void)
 {
-	getInfo();
+	_getInfo();
 	this->_contacts[this->_index % 8].setInfo(this->_index % 8, this->_info);
 	this->_index++;
 }

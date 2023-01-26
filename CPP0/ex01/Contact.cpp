@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:36:57 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 12:59:07 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:09:20 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	Contact::setInfo(int index, std::string *info)
 	this->_DarkestSecret = info[4];
 }
 
-std::string Contact::truncInfo(std::string info) const
+std::string Contact::_truncInfo(std::string info) const
 {
     if (info.size() > 10)
         return info.substr(0, 9) + ".";
@@ -45,9 +45,9 @@ void	Contact::displayList(void)
 	if (this->_FirstName.empty() || this->_LastName.empty() || this->_NickName.empty())
 		return ;
 	std::cout << "|" << std::setw(10) << this->_index;
-	std::cout << "|" << std::setw(10) << this->truncInfo(this->_FirstName);
-	std::cout << "|" << std::setw(10) << this->truncInfo(this->_LastName);
-	std::cout << "|" << std::setw(10) << this->truncInfo(this->_NickName);
+	std::cout << "|" << std::setw(10) << this->_truncInfo(this->_FirstName);
+	std::cout << "|" << std::setw(10) << this->_truncInfo(this->_LastName);
+	std::cout << "|" << std::setw(10) << this->_truncInfo(this->_NickName);
 	std::cout << "|" << std::endl;
 }
 
