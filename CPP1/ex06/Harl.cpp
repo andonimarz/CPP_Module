@@ -32,15 +32,27 @@ void Harl::error(void)
 
 void Harl::complain(std::string level)
 {
+	int			i;
 	std::string	options[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	ftPtr		ptr[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	for (int i = 0; i < 4; i++)
-	{
+	for (i = 0; i < 4; i++)
 		if (level == options[i])
-		{
-			(this->*ptr[i])();
 			break ;
-		}
+	switch (i)
+	{
+		case 0:	std::cout << "[ DEBUG ]" << std::endl;
+				this->debug();
+				std::cout << std::endl;
+		case 1:	std::cout << "[ INFO ]" << std::endl;
+				this->info();
+				std::cout << std::endl;
+		case 2:	std::cout << "[ WARNING ]" << std::endl;
+				this->warning();
+				std::cout << std::endl;
+		case 3:	std::cout << "[ ERROR ]" << std::endl;
+				this->error();
+				std::cout << std::endl;
+				break ;
+		default: std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
