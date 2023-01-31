@@ -28,5 +28,10 @@ int	main( void )
 	std::cout << b.getRawBits() << std::endl;
 	c.operator=(b);
 	std::cout << c.getRawBits() << std::endl;
+	b.setRawBits(11);
+	c.setRawBits(b.getRawBits());
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	return 0;
-} */
+}
+ */
