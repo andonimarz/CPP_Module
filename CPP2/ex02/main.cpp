@@ -29,7 +29,9 @@ int main( void )
 	std::cout << "a after ++a = " << a << std::endl;
 	std::cout << "a * 256 = " << (a * 256) << std::endl;
 	std::cout << "a + 2 = " << (a + 2) << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "a = 2 = " << (a = 2) << std::endl;
 	std::cout << "b == " << b << std::endl;
-	std::cout << "max between a and b = " << Fixed::max( a, b ) << std::endl;
+	std::cout << "max between a = " << a << " and b = " << b << Fixed::max( a, b ) << std::endl;
 	return 0;
 } */
