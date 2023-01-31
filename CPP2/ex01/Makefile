@@ -6,12 +6,12 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/30 14:53:05 by amarzana         ###   ########.fr        #
+#    Updated: 2023/01/31 13:12:06 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = orthodoxClass
+NAME = a.out
 
 SRC = 	main.cpp		\
 		Fixed.cpp
