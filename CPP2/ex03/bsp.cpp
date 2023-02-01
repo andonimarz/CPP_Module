@@ -1,49 +1,42 @@
 #include "Fixed.hpp"
 #include "Point.hpp"
-#include <cmath>
 
-typedef struct s_info
+Fixed calculate_ponderation(Point const a, Point const b, Point const c, Point const point)
 {
-	float	AB;
-	float	AC;
-	float	BC;
-	float	PA;
-	float	PB;
-	float	PC;
-}				t_info;
+	//AB = SEGMENT BETWEEN A AND B.
+	Point AB((b.getX().toFloat() - a.getX().toFloat()), 
+			(b.getY().toFloat() - a.getY().toFloat()));
 
-float	distance(Point const a, Point const b)
-{
-	Fixed result = ((a.getX() - b.getX()) * (a.getX() - b.getX())) +
-					((a.getY() - b.getY()) * (a.getY() - b.getY()));
-	return (sqrt(result.toFloat()));
-}
+	//AC = SEGMENT BETWEEN A AND C.
+	Point AC((c.getX().toFloat() - a.getX().toFloat()), 
+			(c.getY().toFloat() - a.getY().toFloat()));
 
-bool	check_dist(t_info info)
-{
-	std::cout << "AB " << info.AB << std::endl;
-	std::cout << "AC " << info.AC << std::endl;
-	std::cout << "BC " << info.BC << std::endl;
-	std::cout << "PA " << info.PA << std::endl;
-	std::cout << "PB " << info.PB << std::endl;
-	std::cout << "PC " << info.PC << std::endl;
-	if (info.PA >= info.AB || info.PA >= info.AC ||
-		info.PB >= info.AB || info.PB >= info.BC ||
-		info.PC >= info.AC || info.PC >= info.BC)
-		return (false);
-	std::cout << "TRUE" << info.AB << std::endl;
-	return (true);
+	//std::cout << "ABx = " << AB.getX() << " ABy = " << AB.getY() << std::endl;
+	//std::cout << "ACx = " << AC.getX() << " ACy = " << AC.getY() << std::endl;
+
+	//w = THE AB{0, 1} COORDINATE FOR POINT. 
+	//IF w IS NEGATIVE OR BIGGER THAN 1 IT MEANS THAT point IS OUTSIDE THE TRIANGLE
+	//IF w IS 0 OR 1 IT MEANS THAT point IS VERTEX OR point IS IN AN EDGE
+	Fixed w;
+
+	w = (AC.getX() * (a.getY() - point.getY()) + AC.getY() * (point.getX() - a.getX())) / 
+		(AB.getX() * AC.getY() - AB.getY() * AC.getX());
+	return (w);
 }
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	t_info info;
-	
-	info.AB = distance(a, b);
-	info.AC = distance(a, c);
-	info.BC = distance(b, c);
-	info.PA = distance(point, a);
-	info.PB = distance(point, b);
-	info.PC = distance(point, c);
-	return (check_dist(info));
+	Fixed w1 = calculate_ponderation(a, b, c, point);
+	Fixed w2 = calculate_ponderation(b, c, a, point);
+	Fixed w3 = calculate_ponderation(c, a, b, point);
+
+	//std::cout << "W1 = " << w1 << std::endl;
+	//std::cout << "W2 = " << w2 << std::endl;
+	//std::cout << "W3 = " << w3 << std::endl;
+
+	if ((w1 > 0) && (w1 < 1) &&
+		(w2 > 0) && (w2 < 1) &&
+		(w3 > 0) && (w3 < 1))
+		return (true);
+	return (false);
 }
