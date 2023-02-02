@@ -11,12 +11,11 @@ int	main(void)
 
     monster.whoAmI();
     monster2.whoAmI();
-    monster3 = monster;
     monster3.whoAmI();
-
-    monster.attack("the air");
-    monster.takeDamage(10);
-    monster.beRepaired(10);
-	
+    monster3 = monster;
+	monster3.whoAmI();
+    monster.attack("the party");
+    monster2.takeDamage(10);
+    monster3.beRepaired(10);
 	return (0);
 }
