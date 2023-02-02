@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/01 15:52:11 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/02 12:20:46 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = a.out
 
 SRC = 	main.cpp		\
 		ClapTrap.cpp	\
+		ScavTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
