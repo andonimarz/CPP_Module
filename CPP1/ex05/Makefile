@@ -6,12 +6,11 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/27 13:57:02 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/03 14:10:11 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = Harl
+NAME =	Harl
 
 SRC	=	main.cpp	\
 		Harl.cpp

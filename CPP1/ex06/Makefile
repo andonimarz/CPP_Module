@@ -6,12 +6,11 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/27 14:23:58 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/03 14:13:16 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME = harlFilter
+NAME =	harlFilter
 
 SRC	=	main.cpp	\
 		Harl.cpp

@@ -6,14 +6,13 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/26 17:38:00 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/03 11:51:12 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = moarBrainz
 
-SRC = 	main.cpp		\
+SRC	=	main.cpp		\
 		Zombie.cpp		\
 		zombieHorde.cpp
 

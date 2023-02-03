@@ -6,14 +6,13 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/01/26 14:37:08 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/03 11:48:49 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = brainz
 
-SRC = 	main.cpp		\
+SRC =	main.cpp		\
 		Zombie.cpp		\
 		newZombie.cpp	\
 		randomChump.cpp

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 13:42:34 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/03 13:51:48 by amarzana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include	"Weapon.hpp"
 #include	"HumanA.hpp"
 #include	"HumanB.hpp"
 
-int main()
+int	main(void)
 {
 	{
 		Weapon club = Weapon("crude spiked club");
@@ -14,7 +26,6 @@ int main()
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanB jim("Jim");
-		jim.attack();		//Added to prove when HumanB has no weapon yet
 		jim.setWeapon(club);
 		jim.attack();
 		club.setType("some other type of club");

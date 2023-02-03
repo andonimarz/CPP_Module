@@ -130,27 +130,27 @@ Fixed	Fixed::operator/( const Fixed &ref ) const
 
 Fixed	&Fixed::operator++( void )
 {
-	++this->_value;
+	this->_value += 1 << this->_bits;
 	return (*this);
 }
 
 Fixed	Fixed::operator++( int )
 {
 	Fixed tmp( *this );
-	tmp._value = this->_value++;
+	operator++();
 	return (tmp);
 }
 
 Fixed	&Fixed::operator--( void )
 {
-	--this->_value;
+	this->_value -= 1 << this->_bits;
 	return (*this);
 }
 
 Fixed	Fixed::operator--( int )
 {
 	Fixed tmp( *this );
-	tmp._value = this->_value--;
+	operator--();
 	return (tmp);
 }
 

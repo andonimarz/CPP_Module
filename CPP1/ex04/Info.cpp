@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Info.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 13:56:12 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/03 13:56:14 by amarzana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Info.hpp"
 
 Info::Info(char **argv) : _inFile(argv[1]), _find(argv[2]), _replace(argv[3])
@@ -23,7 +35,6 @@ void	Info::job(void)
 		else
 		{
 			coin = this->_str.find(_find, coin);
-			std::cout << "Coin = " << coin << std::endl;
 			while (coin <= this->_str.length())
 			{
 				this->_str.erase(coin, this->_find.length());
