@@ -6,16 +6,16 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:53:59 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/23 15:27:00 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:48:24 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	i;
-	int j;
+	int	j;
 
 	j = 1;
 	if (argc == 1)

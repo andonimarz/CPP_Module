@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:34:08 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 13:03:23 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:51:15 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ int	main(int argc, char **argv)
 				std::cout << "Error: invalid command" << std::endl;
 		}
 	}
-	return 0;
+	return (0);
 }

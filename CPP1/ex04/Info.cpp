@@ -22,12 +22,14 @@ void	Info::job(void)
 			std::cerr << "Error: empty file" << std::endl;
 		else
 		{
-			coin = this->_str.find(_find);
+			coin = this->_str.find(_find, coin);
+			std::cout << "Coin = " << coin << std::endl;
 			while (coin <= this->_str.length())
 			{
 				this->_str.erase(coin, this->_find.length());
 				this->_str.insert(coin, this->_replace);
-				coin = this->_str.find(_find);
+				coin += _replace.length();
+				coin = this->_str.find(_find, coin);
 			}
 			std::ofstream	ofs(this->_outFile);
 			ofs << this->_str;

@@ -6,16 +6,14 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 19:36:57 by amarzana          #+#    #+#             */
-/*   Updated: 2023/01/26 18:40:10 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:55:47 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact(void)
+Contact::Contact(void) : _index(0)
 {
-	this->_index = 0;
-	return;
 }
 
 Contact::~Contact(void)

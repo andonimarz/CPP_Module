@@ -1,10 +1,19 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/03 09:39:41 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/03 09:39:43 by amarzana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void)
+PhoneBook::PhoneBook(void) : _index(0)
 {
-	this->_index = 0;
-	return;
 }
 
 PhoneBook::~PhoneBook(void)
