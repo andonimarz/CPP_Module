@@ -43,7 +43,7 @@ Fixed	&Fixed::operator=( const Fixed &ref )
 	//std::cout << "Assignation operator called" << std::endl;
 	if (this != &ref)
 		this->_value = ref.getRawBits();
-	return *this;
+	return (*this);
 }
 
 //A member function that returns the raw value of the fixed point value.
@@ -69,7 +69,7 @@ int	Fixed::toInt( void ) const
 //A member function that converts the fixed point value to a floating point value.
 float	Fixed::toFloat( void ) const 
 {
-	return (static_cast<float>(this->getRawBits() ) / ( 1 << _bits));
+	return (static_cast<float>(this->getRawBits() ) / ( 1 << this->_bits));
 }
 
 //Comparison operators: >, <, >=, <=, == and !=.
