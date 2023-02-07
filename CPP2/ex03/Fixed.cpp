@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/07 09:03:33 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/07 09:03:34 by amarzana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <cmath>
 
@@ -43,7 +55,7 @@ Fixed	&Fixed::operator=( const Fixed &ref )
 	//std::cout << "Assignation operator called" << std::endl;
 	if (this != &ref)
 		this->_value = ref.getRawBits();
-	return *this;
+	return (*this);
 }
 
 //A member function that returns the raw value of the fixed point value.
@@ -69,7 +81,7 @@ int	Fixed::toInt( void ) const
 //A member function that converts the fixed point value to a floating point value.
 float	Fixed::toFloat( void ) const 
 {
-	return (static_cast<float>(this->getRawBits() ) / ( 1 << _bits));
+	return (static_cast<float>(this->getRawBits() ) / ( 1 << this->_bits));
 }
 
 //Comparison operators: >, <, >=, <=, == and !=.
@@ -130,27 +142,27 @@ Fixed	Fixed::operator/( const Fixed &ref ) const
 
 Fixed	&Fixed::operator++( void )
 {
-	++this->_value;
+	this->_value += 1 << this->_bits;
 	return (*this);
 }
 
 Fixed	Fixed::operator++( int )
 {
 	Fixed tmp( *this );
-	tmp._value = this->_value++;
+	operator++();
 	return (tmp);
 }
 
 Fixed	&Fixed::operator--( void )
 {
-	--this->_value;
+	this->_value -= 1 << this->_bits;
 	return (*this);
 }
 
 Fixed	Fixed::operator--( int )
 {
 	Fixed tmp( *this );
-	tmp._value = this->_value--;
+	operator--();
 	return (tmp);
 }
 
