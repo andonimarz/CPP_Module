@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:25:03 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 14:01:27 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:34:02 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Cat::Cat(const Cat &src)
 Cat::~Cat()
 {
 	std::cout << "Cat destructor" << std::endl;
+	delete (this->_brain);
 }
 
 Cat &Cat::operator=(const Cat &src)

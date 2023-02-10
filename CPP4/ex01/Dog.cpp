@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:24:53 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 14:02:09 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:34:04 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Dog::Dog(const Dog &src)
 Dog::~Dog()
 {
 	std::cout << "Dog destructor" << std::endl;
+	delete (this->_brain);
 }
 
 Dog &Dog::operator=(const Dog &src)
