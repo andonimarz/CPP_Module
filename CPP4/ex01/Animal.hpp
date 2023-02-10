@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 13:07:48 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:00:49 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Animal
 		Animal();
 		Animal(std::string type);
 		Animal(const Animal &src);
-		~Animal();
+		virtual ~Animal();
 		Animal	&operator=(const Animal &src);
 		std::string		getType(void) const;
 		virtual void	makeSound(void) const;

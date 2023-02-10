@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:19 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 14:09:39 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/10 18:21:23 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,26 @@
 
 int main(void)
 {
-	Animal *animal_array[4];
+	int		len = 4;
+	Animal *array[len];
 
 	std::cout << "---- Generating array ----" << std::endl;
-	for (int i=0; i<=3; i++)
+	for (int i = 0; i < len; i++)
 	{
-		if (i < 2)
-			animal_array[i] = new Dog();
+		if (i < (len / 2))
+			array[i] = new Dog();
 		else
-			animal_array[i] = new Cat();
+			array[i] = new Cat();
 	}
 	std::cout << "---- Destroying array ----" << std::endl;
-	
-	for (int i=0; i<=3; i++)
-	{
-		delete animal_array[i];
-	}
-
-	std::cout << std::endl << std::endl << std::endl;
+	for (int i = 0; i < len; i++)
+		delete array[i];
+	std::cout << "---- Deep copy ----" << std::endl;
+	std::cout << "Creating a cat" << std::endl;
 	Cat cat1;
-	Cat cat2;
-
-	cat2 = cat1;
-	std::cout << "cat 1 memory: " << &cat1 << std::endl;
-	std::cout << "cat 2 memory: " << &cat2 << std::endl;
+	std::cout << "Creating a clone of previous cat" << std::endl;
+	Cat cat2 = cat1;
+	std::cout << "cat's address: " << &cat1 << std::endl;
+	std::cout << "cat clone's address: " << &cat2 << std::endl;
+	std::cout << "---- Destroying cat and clone ----" << std::endl;
 }

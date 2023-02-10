@@ -19,8 +19,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain &src) {
 	std::cout << "Brain copy constructor" << std::endl;
-	for (size_t i = 0; i < 100; i++)
-		this->ideas[i] = src.ideas[i];
+	*this = src;
 }
 
 Brain::~Brain() {
@@ -29,7 +28,7 @@ Brain::~Brain() {
 
 const Brain &Brain::operator=(const Brain &src) {
 	std::cout << "Brain operator=" << std::endl;
-	for (size_t i = 0; i < 100; i++)
+	for (int i = 0; i < 100; i++)
 		this->ideas[i] = src.ideas[i];
 	return (*this);
 }
