@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/10 13:43:54 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/10 14:03:45 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRC =	main.cpp		\
 		Cat.cpp			\
 		Dog.cpp			\
 		WrongAnimal.cpp	\
-		WrongCat.cpp
+		WrongCat.cpp	\
+		Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

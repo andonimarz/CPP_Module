@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:25:03 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 12:57:21 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/10 14:01:21 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Cat::Cat() : Animal("Cat")
 {
 	std::cout << "Cat constructor" << std::endl;
-	this->type = "Cat";
 }
 
 Cat::Cat(const Cat &src)
