@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,44 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	std::cout << "Animal constructor" << std::endl;
+	std::cout << "WrongAnimal constructor" << std::endl;
 	this->type = "No type";
 }
 
-Animal::Animal(std::string type)
+WrongAnimal::WrongAnimal(std::string type)
 {
-	std::cout << "Animal constructor" << std::endl;
+	std::cout << "WrongAnimal constructor" << std::endl;
 	this->type = type;
 }
 
-Animal::Animal(const Animal &src)
+WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
-	std::cout << "Animal copy constructor" << std::endl;
+	std::cout << "WrongAnimal copy constructor" << std::endl;
 	*this = src;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal destructor" << std::endl;
+	std::cout << "WrongAnimal destructor" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &src)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
 	if (this != &src)
 		this->type = src.type;
 	return (*this);
 }
 
-std::string	Animal::getType(void) const
+std::string	WrongAnimal::getType(void) const
 {
 	return (this->type);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
 	std::cout << this->type << " makeSound: No sound" << std::endl;
 }
