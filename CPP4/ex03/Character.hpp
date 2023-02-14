@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/13 15:04:12 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:06:12 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ class Character: public ICharacter
 		Character(void);
 		Character(std::string name);
 		Character(Character const &src);
-		~Character(void);
 		Character &operator=(const Character &src);
+		~Character(void);
 		std::string const &getName() const;
 		void equip(AMateria *m);
-		void unequip(int i);
-		void use(int i, ICharacter &target);
+		void unequip(int idx);
+		void use(int idx, ICharacter &target);
 };
 
 #endif

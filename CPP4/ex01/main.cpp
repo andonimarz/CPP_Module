@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:19 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 18:21:23 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:28:00 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,12 @@ int main(void)
 	std::cout << "Creating a cat" << std::endl;
 	Cat cat1;
 	std::cout << "Creating a clone of previous cat" << std::endl;
-	Cat cat2 = cat1;
+	Cat cat2(cat1);
 	std::cout << "cat's address: " << &cat1 << std::endl;
 	std::cout << "cat clone's address: " << &cat2 << std::endl;
+	std::cout << "Creating a second clone of previous cat" << std::endl;
+	Cat cat3 = cat1;
+	std::cout << "cat's address: " << &cat1 << std::endl;
+	std::cout << "cat second clone's address: " << &cat3 << std::endl;
 	std::cout << "---- Destroying cat and clone ----" << std::endl;
 }

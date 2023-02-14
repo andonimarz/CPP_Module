@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/10 13:07:57 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:35:42 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,4 @@ Animal &Animal::operator=(const Animal &src)
 std::string	Animal::getType(void) const
 {
 	return (this->type);
-}
-
-void	Animal::makeSound(void) const
-{
-	std::cout << this->type << " makeSound: No sound" << std::endl;
 }

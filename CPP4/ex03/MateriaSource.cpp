@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/13 16:45:04 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/14 10:46:32 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-MateriaSource::MateriaSource()
+MateriaSource::MateriaSource(void)
 {
-	std::cout << "MateriaSource Constructor" << std::endl;
+	//std::cout << "MateriaSource Constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->materias[i] = NULL;
 }
 
-MateriaSource::~MateriaSource()
+MateriaSource::~MateriaSource(void)
 {
-	std::cout << "MateriaSource destructor" << std::endl;
+	//std::cout << "MateriaSource destructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->materias[i] != NULL)
@@ -38,23 +38,23 @@ void MateriaSource::learnMateria(AMateria *learn)
 		if (this->materias[i] == NULL)
 		{
 			this->materias[i] = learn;
-			std::cout << learn->getType() << " equiped" << std::endl;
+			//std::cout << learn->getType() << " learned" << std::endl;
 			return;
 		}
 	}
-	std::cout << "Inventory full"<< std::endl;
+	std::cout << "Can't learn more materias"<< std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	if (type == "ice")
 	{
-		Ice *aux = new Ice(type);
+		Ice *aux = new Ice("ice");
 		return (aux);
 	}
 	else
 	{
-		Cure *aux = new Cure(type);
+		Cure *aux = new Cure("cure");
 		return (aux);
 	}
 	return (NULL);

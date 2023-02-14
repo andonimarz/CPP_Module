@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/13 16:47:20 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/14 13:38:22 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = a.out
 
 SRC =	main.cpp			\
-		Amateria.cpp		\
+		AMateria.cpp		\
 		Character.cpp		\
 		Cure.cpp			\
 		Ice.cpp				\

@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:19 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/13 12:48:00 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:15:21 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int	main(void)
 		delete (anim);
 		delete (dog);
 		delete (cat);
-	}
-	{
+
 		std::cout << "------WrongAnimal------" << std::endl;
 		const WrongAnimal* wanim = new WrongAnimal();
 		const WrongAnimal* wcat = new WrongCat();
