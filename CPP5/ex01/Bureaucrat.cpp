@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/17 14:19:21 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/17 14:22:49 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,20 @@ void	Bureaucrat::decGrade(void)
 		this->_grade++;
 	else
 		throw GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(Form &src)
+{
+	try
+	{
+		src.beSigned(*this);
+	}
+	catch(const std::exception &exception)
+	{
+		std::cout << this->getName() << " couldn't sign " << src.getName() << " because ";
+		std::cerr << exception.what() << std::endl;
+	}
+	
 }
 
 std::ostream	&operator<<( std::ostream &ost, Bureaucrat const &b)

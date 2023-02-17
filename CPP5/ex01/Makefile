@@ -6,14 +6,16 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/14 17:45:40 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/17 14:23:06 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = a.out
 
-SRC =	main.cpp	\
+SRC =	main.cpp		\
+		Bureaucrat.cpp	\
+		Form.cpp
 
 
 OBJ = $(SRC:.cpp=.o)
