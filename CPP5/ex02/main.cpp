@@ -6,12 +6,13 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 11:03:05 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/18 12:42:58 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void)
 {
@@ -47,10 +48,10 @@ int	main(void)
 		std::cout << "After decGrade(): " << b3 << std::endl;
 		std::cout << std::endl << "===== That's all. No exceptions! =====" << std::endl << std::endl;
 		*/
-		std::cout << "----- FORMS -----" << std::endl;
-		Form f1(10, 10, "Paper10");
-		Form f2(100, 100, "Paper100");
-		Form f3(f1);
+		/* std::cout << "----- FORMS -----" << std::endl;
+		AForm f1(10, 10, "Paper10");
+		AForm f2(100, 100, "Paper100");
+		AForm f3(f1);
 		std::cout << "----- Test 1 -----" << std::endl;
 		std::cout << f1 << std::endl;
 		std::cout << "Copy: " << f3 << std::endl;
@@ -62,7 +63,13 @@ int	main(void)
 		std::cout << b3 << std::endl;
 		b3.signForm(f2);
 		std::cout << f2 << std::endl;
-		std::cout << "===== That's all =====" << std::endl;
+		std::cout << "===== That's all =====" << std::endl; */
+		std::cout << "----- ShrubberyCreationForm -----" << std::endl;
+		AForm	*scf = new ShrubberyCreationForm("shrubbery");
+		std::cout << *scf << std::endl;
+		b1.signForm(*scf);
+		std::cout << *scf << std::endl;
+		b1.executeForm(*scf);
 	}
 	catch (std::exception &exception)
 	{
