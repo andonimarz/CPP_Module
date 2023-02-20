@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 14:19:43 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:14:56 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(void)
 		// //b3.executeForm(*scf);
 		// std::cout << "----- Senior execs Shrubbery -----" << std::endl;
 		// b2.executeForm(*scf);
+		// delete scf;
 
 		// std::cout << "----- RobotomyRequestForm -----" << std::endl;
 		// AForm	*rrf = new RobotomyRequestForm("Human");
@@ -60,9 +61,10 @@ int	main(void)
 		// //b2.executeForm(*rrf);
 		// std::cout << "----- Boss execs RobotomyRequest -----" << std::endl;
 		// b1.executeForm(*rrf);
+		// delete rrf;
 
 		// std::cout << "----- PresidentialPardonForm -----" << std::endl;
-		// AForm	*ppf = new PresidentialPardonForm("Human");
+		// AForm	*ppf = new PresidentialPardonForm("Prisoner");
 		// std::cout << *ppf << std::endl;
 		// //===== Uncomment this for a low grade exception in sign =====
 		// std::cout << "----- Senior tries to sign -----" << std::endl;
@@ -77,6 +79,7 @@ int	main(void)
 		// b2.executeForm(*ppf);
 		// std::cout << "----- Boss execs PresidentialPardon -----" << std::endl;
 		// b1.executeForm(*ppf);
+		// delete ppf;
 	}
 	catch (std::exception &exception)
 	{

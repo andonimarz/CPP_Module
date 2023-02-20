@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 17:57:04 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:13:15 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,42 @@ void	Bureaucrat::decGrade(void)
 		this->_grade++;
 	else
 		throw GradeTooLowException();
+}
+
+void	Bureaucrat::signForm(AForm &src)
+{
+	try
+	{
+		src.beSigned(*this);
+	}
+	catch(const std::exception &exception)
+	{
+		std::cerr << this->getName() << " couldn't sign " << src.getName() << " because "
+		<< exception.what() << std::endl;
+	}
+	
+}
+
+void Bureaucrat::executeForm(const AForm &src)
+{
+	try
+	{
+		if (&src == (void *)0x0)
+		{
+			std::cout << "Form does not exist" << std::endl;
+			return ;
+		}
+		else
+		{
+			src.execute(*this);
+			std::cout << "Bureaucrat " << this->getName() << " executed " << src.getName() << std::endl;
+		}
+	}
+	catch (const std::exception &exception)
+	{
+		std::cerr << "Bureaucrat " << this->getName() << " cannot execute " << src.getName() << " because "
+		<< exception.what() << std::endl;
+	}
 }
 
 std::ostream	&operator<<( std::ostream &ost, Bureaucrat const &b)
