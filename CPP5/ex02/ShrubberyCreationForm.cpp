@@ -43,7 +43,7 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &_executor) const
 {
 	if (_executor.getGrade() > this->getExecGrade())
 		throw GradeTooLowException();
-	if (this->getSigned() == 1)
+	if (this->getSigned() == 0)
 		throw FormNotSignedException();
 	std::ofstream	file(this->_target + "_shrubbery");
 	file << "          &&& &&  & &&" << std::endl;
@@ -56,6 +56,6 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &_executor) const
 	file << "   &&       @}{/" << std::endl;
 	file << "            }}{" << std::endl;
 	file << "           /}}{," << std::endl;
-	file << "      , -=-~{ .-^- _" << std::endl;
+	file << "      , -=-~{ .-^- _" << std::endl << std::endl << std::endl;
 	file.close();
 }

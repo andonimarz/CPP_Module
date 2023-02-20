@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 12:40:39 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:13:15 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ void	Bureaucrat::signForm(AForm &src)
 	}
 	catch(const std::exception &exception)
 	{
-		std::cout << this->getName() << " couldn't sign " << src.getName() << " because ";
-		std::cerr << exception.what() << std::endl;
+		std::cerr << this->getName() << " couldn't sign " << src.getName() << " because "
+		<< exception.what() << std::endl;
 	}
 	
 }
@@ -87,18 +87,22 @@ void Bureaucrat::executeForm(const AForm &src)
 {
 	try
 	{
-		if (&src == (void *)0x0) {
+		if (&src == (void *)0x0)
+		{
 			std::cout << "Form does not exist" << std::endl;
 			return ;
 		}
 		else
+		{
 			src.execute(*this);
+			std::cout << "Bureaucrat " << this->getName() << " executed " << src.getName() << std::endl;
+		}
 	}
-	catch (std::exception &_exception) {
-		std::cout << "Bureaucrat " << this->getName() << " cannot execute " << src.getName() << " because " << _exception.what() << std::endl;
-		throw ;
+	catch (const std::exception &exception)
+	{
+		std::cerr << "Bureaucrat " << this->getName() << " cannot execute " << src.getName() << " because "
+		<< exception.what() << std::endl;
 	}
-	std::cout << "Bureaucrat " << this->getName() << " executes " << src.getName() << std::endl;
 }
 
 std::ostream	&operator<<( std::ostream &ost, Bureaucrat const &b)

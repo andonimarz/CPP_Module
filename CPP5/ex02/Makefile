@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/18 12:20:30 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/20 13:57:29 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ NAME = a.out
 SRC =	main.cpp		\
 		AForm.cpp		\
 		Bureaucrat.cpp	\
-		ShrubberyCreationForm.cpp
+		ShrubberyCreationForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		PresidentialPardonForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

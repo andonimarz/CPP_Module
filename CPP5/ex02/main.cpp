@@ -6,13 +6,15 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 12:42:58 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:19:43 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void)
 {
@@ -21,55 +23,60 @@ int	main(void)
 		Bureaucrat	b1(2, "Big_boss");			// Grade 1 for GradeTooHighException
 		Bureaucrat	b2(50, "Senior_Bureauc.");
 		Bureaucrat	b3(149, "Junior_Bureauc.");	// Grade 150 for GradeTooLowException
-		//Bureaucrat	b4(151, "Bad_b");
-		//Bureaucrat	b4(0, "Bad_b");
-		/* Bureaucrat	b5(b2);
-		std::cout << std::endl << "----- First test -----" << std::endl << std::endl;
-		std::cout << b2 << std::endl;
-		std::cout << "Copy: " << b5 << std::endl;
-		b2.decGrade();
-		std::cout << "After decGrade(): " << b2 << std::endl;
-		b2.decGrade();
-		std::cout << "After decGrade(): " << b2 << std::endl;
-		std::cout << "Copy: " << b5 << std::endl;
-		b2.incGrade();
-		std::cout << "After incGrade(): " << b2 << std::endl;
-		b2.incGrade();
-		std::cout << "After incGrade(): " << b2 << std::endl;
-		b2 = b1;
-		std::cout << "After operator=: " << b2 << std::endl;
-		std::cout << std::endl << "----- Second test -----" << std::endl << std::endl;
-		std::cout << b1 << std::endl;
-		b1.incGrade();
-		std::cout << "After incGrade(): " << b1 << std::endl;
-		std::cout << std::endl << "----- Third test -----" << std::endl << std::endl;
-		std::cout << b3 << std::endl;
-		b3.decGrade();
-		std::cout << "After decGrade(): " << b3 << std::endl;
-		std::cout << std::endl << "===== That's all. No exceptions! =====" << std::endl << std::endl;
-		*/
-		/* std::cout << "----- FORMS -----" << std::endl;
-		AForm f1(10, 10, "Paper10");
-		AForm f2(100, 100, "Paper100");
-		AForm f3(f1);
-		std::cout << "----- Test 1 -----" << std::endl;
-		std::cout << f1 << std::endl;
-		std::cout << "Copy: " << f3 << std::endl;
-		b1.signForm(f1);
-		std::cout << f1 << std::endl;
-		std::cout << "Copy: " << f3 << std::endl;
-		std::cout << "----- Test 2 -----" << std::endl;
-		std::cout << f2 << std::endl;
-		std::cout << b3 << std::endl;
-		b3.signForm(f2);
-		std::cout << f2 << std::endl;
-		std::cout << "===== That's all =====" << std::endl; */
-		std::cout << "----- ShrubberyCreationForm -----" << std::endl;
-		AForm	*scf = new ShrubberyCreationForm("shrubbery");
-		std::cout << *scf << std::endl;
-		b1.signForm(*scf);
-		std::cout << *scf << std::endl;
-		b1.executeForm(*scf);
+	
+		//AForm af("bad_form");					// Not allowed because now is abstract
+		
+		// std::cout << "----- ShrubberyCreationForm -----" << std::endl;
+		// AForm	*scf = new ShrubberyCreationForm("Drawing");
+		// std::cout << *scf << std::endl;
+		// //===== Uncomment this for a low grade exception in sign =====
+		// // std::cout << "----- Junior tries to sign -----" << std::endl;
+		// // b3.signForm(*scf);
+		// std::cout << *scf << std::endl;
+		// //===== Comment this for a not signed exception in exec =====
+		// std::cout << "----- Senior signs ShrubberyCreation -----" << std::endl;
+		// b2.signForm(*scf);
+		// std::cout << *scf << std::endl;
+		// //===========================================================
+		// //===== Uncomment this for a low grade exception in exec =====
+		// //std::cout << "----- Junior tries to exec -----" << std::endl;
+		// //b3.executeForm(*scf);
+		// std::cout << "----- Senior execs Shrubbery -----" << std::endl;
+		// b2.executeForm(*scf);
+
+		// std::cout << "----- RobotomyRequestForm -----" << std::endl;
+		// AForm	*rrf = new RobotomyRequestForm("Human");
+		// std::cout << *rrf << std::endl;
+		// //===== Uncomment this for a low grade exception in sign =====
+		// //std::cout << "----- Junior tries to sign -----" << std::endl;
+		// //b3.signForm(*rrf);
+		// std::cout << *rrf << std::endl;
+		// //===== Comment this for a not signed exception in exec =====
+		// std::cout << "----- Senior signs RobotomyRequest -----" << std::endl;
+		// b2.signForm(*rrf);
+		// std::cout << *rrf << std::endl;
+		// //===== Uncomment this for a low grade exception in exec =====
+		// //std::cout << "----- Senior tries to exec -----" << std::endl;
+		// //b2.executeForm(*rrf);
+		// std::cout << "----- Boss execs RobotomyRequest -----" << std::endl;
+		// b1.executeForm(*rrf);
+
+		// std::cout << "----- PresidentialPardonForm -----" << std::endl;
+		// AForm	*ppf = new PresidentialPardonForm("Human");
+		// std::cout << *ppf << std::endl;
+		// //===== Uncomment this for a low grade exception in sign =====
+		// std::cout << "----- Senior tries to sign -----" << std::endl;
+		// b2.signForm(*ppf);
+		// std::cout << *ppf << std::endl;
+		// //===== Comment this for a not signed exception in exec =====
+		// std::cout << "----- Boss signs PresidentialPardon -----" << std::endl;
+		// b1.signForm(*ppf);
+		// std::cout << *ppf << std::endl;
+		// //===== Uncomment this for a low grade exception in exec =====
+		// std::cout << "----- Senior tries to exec -----" << std::endl;
+		// b2.executeForm(*ppf);
+		// std::cout << "----- Boss execs PresidentialPardon -----" << std::endl;
+		// b1.executeForm(*ppf);
 	}
 	catch (std::exception &exception)
 	{
