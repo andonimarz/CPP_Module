@@ -22,7 +22,36 @@ Intern::~Intern()
 	std::cout << "Intern destructor" << std::endl;
 }
 
-AForm	*makeForm(std::string name, std::string target)
+AForm	*Intern::makeForm(std::string name, std::string target)
 {
+	std::string options [3] = {"shrubbery request", "robotomy request", "presidential request"};
+	AForm	*ptr;
+	int		i;
 	
+	for (i = 0; i < 3; i++)
+		if (name == options[i])
+			break ;
+	switch (i)
+	{
+		case (0):
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return (ptr = new ShrubberyCreationForm(target), ptr);
+		}
+		case (1):
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return (ptr = new RobotomyRequestForm(target), ptr);
+		}
+		case (2):
+		{
+			std::cout << "Intern creates " << name << std::endl;
+			return (ptr = new PresidentialPardonForm(target), ptr);
+		}
+		default:
+		{
+			std::cout << "Error: invalid form name" << std::endl;
+			return (NULL);
+		}
+	}
 }

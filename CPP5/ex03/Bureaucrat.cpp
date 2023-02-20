@@ -73,7 +73,12 @@ void	Bureaucrat::signForm(AForm &src)
 {
 	try
 	{
-		src.beSigned(*this);
+		if (!&src)
+		{
+			std::cout << "Error: invalid form" << std::endl;
+			return;
+		} else
+			src.beSigned(*this);
 	}
 	catch(const std::exception &exception)
 	{
@@ -87,9 +92,9 @@ void Bureaucrat::executeForm(const AForm &src)
 {
 	try
 	{
-		if (&src == (void *)0x0)
+		if (!&src)
 		{
-			std::cout << "Form does not exist" << std::endl;
+			std::cout << "Error: invalid form" << std::endl;
 			return ;
 		}
 		else
