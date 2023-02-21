@@ -73,11 +73,8 @@ void	Bureaucrat::signForm(AForm &src)
 {
 	try
 	{
-		if (&src == nullptr)
-		{
-			std::cout << "Error: invalid form" << std::endl;
-			return;
-		}
+		if (&src == (void *)NULL)
+			std::cerr << "Error: invalid form" << std::endl;
 		else
 			src.beSigned(*this);
 	}
@@ -93,11 +90,8 @@ void Bureaucrat::executeForm(const AForm &src)
 {
 	try
 	{
-		if (&src == nullptr)
-		{
-			std::cout << "Error: invalid form" << std::endl;
-			return ;
-		}
+		if (&src == (void *)NULL)
+			std::cerr << "Error: invalid form" << std::endl;
 		else
 		{
 			src.execute(*this);

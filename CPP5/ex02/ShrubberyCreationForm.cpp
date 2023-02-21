@@ -56,6 +56,6 @@ void	ShrubberyCreationForm::execute(const Bureaucrat &_executor) const
 	file << "   &&       @}{/" << std::endl;
 	file << "            }}{" << std::endl;
 	file << "           /}}{," << std::endl;
-	file << "      , -=-~{ .-^- _" << std::endl << std::endl << std::endl;
+	file << "      , -=-~{ .-^- _" << std::endl;
 	file.close();
 }

@@ -74,10 +74,7 @@ void	Bureaucrat::signForm(Form &src)
 	try
 	{
 		if (&src == (void *)NULL)
-		{
-			std::cout << "Error: invalid form" << std::endl;
-			return;
-		}
+			std::cerr << "Error: invalid form" << std::endl;
 		else
 			src.beSigned(*this);
 	}

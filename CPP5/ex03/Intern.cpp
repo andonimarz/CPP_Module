@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.cpp                                     :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -36,17 +36,17 @@ AForm	*Intern::makeForm(std::string name, std::string target)
 		case (0):
 		{
 			std::cout << "Intern creates " << name << std::endl;
-			return (ptr = new ShrubberyCreationForm(target), ptr);
+			return (ptr = new ShrubberyCreationForm(target));
 		}
 		case (1):
 		{
 			std::cout << "Intern creates " << name << std::endl;
-			return (ptr = new RobotomyRequestForm(target), ptr);
+			return (ptr = new RobotomyRequestForm(target));
 		}
 		case (2):
 		{
 			std::cout << "Intern creates " << name << std::endl;
-			return (ptr = new PresidentialPardonForm(target), ptr);
+			return (ptr = new PresidentialPardonForm(target));
 		}
 		default:
 		{

@@ -10,7 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-
 NAME = a.out
 
 SRC =	main.cpp		\
@@ -36,6 +35,10 @@ $(NAME): $(OBJ)
 clean:
 		@rm -f $(OBJ)
 		@echo "Removing objects"
+		@if [ -f *_shrubbery ]; then \
+		echo "Removing *_shrubbery"; \
+		rm *_shrubbery; \
+		fi
 
 fclean: clean
 		@rm -f $(NAME)
