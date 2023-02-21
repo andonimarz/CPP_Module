@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 11:25:20 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:48:25 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class	AForm
 			return ("Grade is too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 		virtual const char* what() const throw()
@@ -51,6 +52,7 @@ class	AForm
 			return ("Grade is too low");
 		}
 	};
+
 	class FormNotSignedException : public std::exception
 	{
 		const char *what() const throw()

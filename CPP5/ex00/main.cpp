@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/17 12:09:22 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 11:29:30 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	main(void)
 	try
 	{
 		Bureaucrat	b1(2, "Big_boss");			// Grade 1 for GradeTooHighException
-		Bureaucrat	b2(50, "Senior_Bureauc.");
-		Bureaucrat	b3(149, "Junior_Bureauc.");	// Grade 150 for GradeTooLowException
+		Bureaucrat	b2(50, "Senior_Bureauc");
+		Bureaucrat	b3(149, "Junior_Bureauc");	// Grade 150 for GradeTooLowException
 		//Bureaucrat	b4(151, "Bad_b");
 		//Bureaucrat	b4(0, "Bad_b");
 		Bureaucrat	b5(b2);
@@ -48,10 +48,9 @@ int	main(void)
 	}
 	catch (std::exception &exception)
 	{
-		std::cout << std::endl << "===== An exception occurred! =====" << std::endl;
-		std::cout << "-> " << exception.what() << std::endl;
-		std::cout << "==================================" << std::endl << std::endl;
-
+		std::cerr << std::endl << "===== An exception occurred! =====" << std::endl;
+		std::cerr << "-> " << exception.what() << std::endl;
+		std::cerr << "==================================" << std::endl << std::endl;
 	}
 	return (0);
 }

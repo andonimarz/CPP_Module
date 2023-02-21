@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 11:25:20 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:50:13 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class	RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const RobotomyRequestForm &src);
 		~RobotomyRequestForm();
 		const RobotomyRequestForm	&operator=(const RobotomyRequestForm &src);
-		virtual void						execute(const Bureaucrat &_executor) const;
+		virtual void				execute(const Bureaucrat &_executor) const;
 };
 
 #endif

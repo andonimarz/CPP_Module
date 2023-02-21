@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/20 13:57:29 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/21 14:05:24 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,11 @@ $(NAME): $(OBJ)
 clean:
 		@rm -f $(OBJ)
 		@echo "Removing objects"
+		@if [ -f *_shrubbery ]; then \
+		echo "Removing *_shrubbery"; \
+		rm *_shrubbery; \
+		fi
+		
 
 fclean: clean
 		@rm -f $(NAME)

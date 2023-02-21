@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 17:57:04 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 11:29:24 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	Bureaucrat::incGrade(void)
 
 void	Bureaucrat::decGrade(void)
 {
-	if ((this->_grade + 1) >= 1 &&  (this->_grade + 1) <= 150)
+	if ((this->_grade + 1) >= 1 && (this->_grade + 1) <= 150)
 		this->_grade++;
 	else
 		throw GradeTooLowException();

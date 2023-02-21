@@ -6,11 +6,10 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 11:03:05 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:45:10 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 int	main(void)
@@ -20,49 +19,32 @@ int	main(void)
 		Bureaucrat	b1(2, "Big_boss");			// Grade 1 for GradeTooHighException
 		Bureaucrat	b2(50, "Senior_Bureauc.");
 		Bureaucrat	b3(149, "Junior_Bureauc.");	// Grade 150 for GradeTooLowException
-		//Bureaucrat	b4(151, "Bad_b");
-		//Bureaucrat	b4(0, "Bad_b");
-		/* Bureaucrat	b5(b2);
-		std::cout << std::endl << "----- First test -----" << std::endl << std::endl;
-		std::cout << b2 << std::endl;
-		std::cout << "Copy: " << b5 << std::endl;
-		b2.decGrade();
-		std::cout << "After decGrade(): " << b2 << std::endl;
-		b2.decGrade();
-		std::cout << "After decGrade(): " << b2 << std::endl;
-		std::cout << "Copy: " << b5 << std::endl;
-		b2.incGrade();
-		std::cout << "After incGrade(): " << b2 << std::endl;
-		b2.incGrade();
-		std::cout << "After incGrade(): " << b2 << std::endl;
-		b2 = b1;
-		std::cout << "After operator=: " << b2 << std::endl;
-		std::cout << std::endl << "----- Second test -----" << std::endl << std::endl;
-		std::cout << b1 << std::endl;
-		b1.incGrade();
-		std::cout << "After incGrade(): " << b1 << std::endl;
-		std::cout << std::endl << "----- Third test -----" << std::endl << std::endl;
-		std::cout << b3 << std::endl;
-		b3.decGrade();
-		std::cout << "After decGrade(): " << b3 << std::endl;
-		std::cout << std::endl << "===== That's all. No exceptions! =====" << std::endl << std::endl;
-		*/
-		std::cout << "----- FORMS -----" << std::endl;
+		std::cout << std::endl << "----- FORMS -----" << std::endl;
 		Form f1(10, 10, "Paper10");
 		Form f2(100, 100, "Paper100");
 		Form f3(f1);
-		std::cout << "----- Test 1 -----" << std::endl;
+		//Form f4(0, 151, "badForm");			//Grades < 1 and > 150
+
+		std::cout << std::endl << "----- Test 1: Big_boss signs Paper10 -----" << std::endl;
 		std::cout << f1 << std::endl;
 		std::cout << "Copy: " << f3 << std::endl;
 		b1.signForm(f1);
 		std::cout << f1 << std::endl;
 		std::cout << "Copy: " << f3 << std::endl;
-		std::cout << "----- Test 2 -----" << std::endl;
+
+		std::cout << std::endl << "----- Test 2 -----" << std::endl;
 		std::cout << f2 << std::endl;
 		std::cout << b3 << std::endl;
 		b3.signForm(f2);
 		std::cout << f2 << std::endl;
-		std::cout << "===== That's all =====" << std::endl;
+		b2.signForm(f2);
+		std::cout << f2 << std::endl;
+
+		std::cout << std::endl << "----- Test 3 -----" << std::endl;
+		Form *f5 = NULL;
+		b1.signForm(*f5);
+
+		std::cout << std::endl << "===== That's all =====" << std::endl;
 	}
 	catch (std::exception &exception)
 	{

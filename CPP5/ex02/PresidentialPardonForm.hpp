@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/18 11:25:20 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:50:17 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class	PresidentialPardonForm : public AForm
 		PresidentialPardonForm(const PresidentialPardonForm &src);
 		~PresidentialPardonForm();
 		const PresidentialPardonForm	&operator=(const PresidentialPardonForm &src);
-		void						execute(const Bureaucrat &_executor) const;
+		void							execute(const Bureaucrat &_executor) const;
 };
 
 #endif

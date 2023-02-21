@@ -6,7 +6,7 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/17 11:42:09 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/21 11:29:33 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = a.out
 
 SRC =	main.cpp		\
 		Bureaucrat.cpp	\
-
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 17:57:20 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:34:34 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class	Form
 			return ("Grade is too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
 		virtual const char* what() const throw()

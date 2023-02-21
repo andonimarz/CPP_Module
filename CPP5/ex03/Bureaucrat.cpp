@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 14:13:15 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:18:58 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,12 @@ void	Bureaucrat::signForm(AForm &src)
 {
 	try
 	{
-		if (!&src)
+		if (&src == nullptr)
 		{
 			std::cout << "Error: invalid form" << std::endl;
 			return;
-		} else
+		}
+		else
 			src.beSigned(*this);
 	}
 	catch(const std::exception &exception)
@@ -92,7 +93,7 @@ void Bureaucrat::executeForm(const AForm &src)
 {
 	try
 	{
-		if (!&src)
+		if (&src == nullptr)
 		{
 			std::cout << "Error: invalid form" << std::endl;
 			return ;
