@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/21 13:18:58 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:24:39 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	Bureaucrat::signForm(AForm &src)
 		std::cerr << this->getName() << " couldn't sign " << src.getName() << " because "
 		<< exception.what() << std::endl;
 	}
-	
 }
 
 void Bureaucrat::executeForm(const AForm &src)

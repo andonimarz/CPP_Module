@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 14:13:15 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:30:53 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ AForm	*Intern::makeForm(std::string name, std::string target)
 		}
 		default:
 		{
-			std::cout << "Error: invalid form name" << std::endl;
+			std::cerr << "Error: invalid form name" << std::endl;
 			return (NULL);
 		}
 	}

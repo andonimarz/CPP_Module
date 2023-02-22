@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/21 13:49:02 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:08:28 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,10 @@ int	AForm::getExecGrade(void) const
 
 void	AForm::beSigned(Bureaucrat &src)
 {
-	if (src.getGrade() <= this->_signGrade)
-	{
-		this->_signed = 1;
-		std::cout << src.getName() << " signed " << this->getName() << std::endl;
-	}
-	else
+	if (src.getGrade() > this->_signGrade)
 		throw GradeTooLowException();
+	this->_signed = 1;
+	std::cout << src.getName() << " signed " << this->getName() << std::endl;
 }
 
 std::ostream	&operator<<( std::ostream &ost, AForm const &f)

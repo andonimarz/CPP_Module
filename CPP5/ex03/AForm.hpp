@@ -24,6 +24,7 @@ class	AForm
 		bool				_signed;
 		const int			_signGrade;
 		const int			_execGrade;
+
 	public:
 		AForm();
 		AForm(int signGrade, int execGrade, std::string name);
@@ -39,18 +40,20 @@ class	AForm
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too low");
 		}
 	};
+
 	class FormNotSignedException : public std::exception
 	{
 		const char *what() const throw()

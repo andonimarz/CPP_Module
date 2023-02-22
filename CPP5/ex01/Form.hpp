@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/21 13:34:34 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:21:38 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Form
 		bool				_signed;
 		const int			_signGrade;
 		const int			_execGrade;
+
 	public:
 		Form();
 		Form(int signGrade, int execGrade, std::string name);
@@ -38,7 +39,7 @@ class	Form
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too high");
 		}
@@ -46,7 +47,7 @@ class	Form
 
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too low");
 		}

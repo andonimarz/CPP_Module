@@ -6,13 +6,10 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 17:30:53 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:25:53 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
 int	main(void)
@@ -43,6 +40,7 @@ int	main(void)
 		bureaucrat.executeForm(*rrf);
 		bureaucrat.executeForm(*ppf);
 		bureaucrat.executeForm(*badForm);
+	
 		std::cout << std::endl << "===== Deleting *ptrs =====" << std::endl << std::endl;
 		if (scf)
 			delete scf;

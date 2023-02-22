@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/20 17:57:48 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:19:16 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class	Bureaucrat
 	private:
 		const std::string	_name;
 		int					_grade;
+
 	public:
 		Bureaucrat();
 		Bureaucrat(int grade, std::string name);
@@ -38,14 +39,15 @@ class	Bureaucrat
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too high");
 		}
 	};
+
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char* what() const throw()
+		const char* what() const throw()
 		{
 			return ("Grade is too low");
 		}

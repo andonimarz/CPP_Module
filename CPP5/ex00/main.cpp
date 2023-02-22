@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 18:30:25 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/21 11:29:30 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:17:21 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	main(void)
 {
 	try
 	{
-		Bureaucrat	b1(2, "Big_boss");			// Grade 1 for GradeTooHighException
+		Bureaucrat	b1(2, "Big_boss");			// Grade 1 for GradeTooHighException in second test
 		Bureaucrat	b2(50, "Senior_Bureauc");
-		Bureaucrat	b3(149, "Junior_Bureauc");	// Grade 150 for GradeTooLowException
-		//Bureaucrat	b4(151, "Bad_b");
-		//Bureaucrat	b4(0, "Bad_b");
+		Bureaucrat	b3(149, "Junior_Bureauc");	// Grade 150 for GradeTooLowException in third test
+		// Bureaucrat	b4(151, "Bad_b");			// Uncomment GradeTooLowException
+		// Bureaucrat	b4(0, "Bad_b");			// Uncomment GradeTooHighException
 		Bureaucrat	b5(b2);
 		std::cout << std::endl << "----- First test -----" << std::endl << std::endl;
 		std::cout << b2 << std::endl;
