@@ -47,7 +47,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &_executor) const
 	if (!this->getSigned())
 		throw FormNotSignedException();
 	std::cout << "* Drilling noises *" << std::endl;
-	std::srand(std::time(0));;
+	std::srand(std::time(0));
 	int	randomNumber = std::rand() % 2;
 	if (randomNumber == 0)
 	{
