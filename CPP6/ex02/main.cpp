@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/25 11:38:31 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/25 11:46:59 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ Base	*generate(void)
 
 void identify(Base *p)
 {
-    if (dynamic_cast<A*>(p))
+    std::cout << "ident. * = ";
+	if (dynamic_cast<A*>(p))
         std::cout << "A" << std::endl;
     else if (dynamic_cast<B*>(p))
         std::cout << "B" << std::endl;
@@ -42,6 +43,7 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
+	std::cout << "ident. & = ";
 	try {
 		A	&a = dynamic_cast<A &>(p);
 		(void)a;
