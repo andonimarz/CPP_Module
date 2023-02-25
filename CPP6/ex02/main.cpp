@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/24 15:47:19 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/25 11:38:31 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,30 +42,24 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-	try
-	{
-		A	&a = dynamic_cast<A&>(p);
+	try {
+		A	&a = dynamic_cast<A &>(p);
 		(void)a;
 		std::cout << "A" << std::endl;
 	}
-	catch (const std::bad_cast &e)
-	{
-		try
-		{
-			B	&b = dynamic_cast<B&>(p);
+	catch (const std::bad_cast &e) {
+		try {
+			B	&b = dynamic_cast<B &>(p);
 			(void)b;
 			std::cout << "B" << std::endl;
 		}
-		catch (const std::bad_cast &e)
-		{
-			try
-			{
-				C	&c = dynamic_cast<C&>(p);
+		catch (const std::bad_cast &e) {
+			try {
+				C	&c = dynamic_cast<C &>(p);
 				(void)c;
 				std::cout << "C" << std::endl;
 			}
-			catch (const std::bad_cast &e)
-			{
+			catch (const std::bad_cast &e) {
 				std::cout << "NULL" << std::endl;
 			}
 		}
@@ -79,7 +73,6 @@ int	main(void)
 
 	std::cout << std::endl << "===== ptr = NULL =====" << std::endl;
 	identify(ptr);
-	identify(*ptr);
 
 	std::cout << std::endl << "===== ptr = generate() =====" << std::endl;
 	ptr = generate();
