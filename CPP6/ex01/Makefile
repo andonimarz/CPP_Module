@@ -6,14 +6,15 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/02/24 13:24:19 by amarzana         ###   ########.fr        #
+#    Updated: 2023/02/25 11:21:45 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = a.out
 
-SRC =	main.cpp
+SRC =	main.cpp	\
+		serialize.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
