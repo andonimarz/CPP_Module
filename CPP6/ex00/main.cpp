@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:00 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/23 16:15:51 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/25 09:29:56 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ int	main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
+		std::string aux = argv[1];
 		try
 		{
-			Number nb(argv[1]);
+			Number nb(aux);
 
 			std::cout << "Char: ";
 			try	{

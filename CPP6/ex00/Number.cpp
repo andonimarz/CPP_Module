@@ -1,4 +1,14 @@
-c
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Number.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/25 09:09:26 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/25 09:42:21 by amarzana         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Number.hpp"
 
@@ -7,12 +17,12 @@ Number::Number()
 	//std::cout << "Number constructor" << std::endl;
 }
 
-Number::Number(char *str) : _str(str)
+Number::Number(std::string str) : _str(str)
 {
-	if (strlen(str) == 1)
+	if (str.size() == 1)
 	{
 		if (str[0] >= '0' && str[0] <= '9')
-			_num = static_cast<char>(std::atoi(str));
+			_num = std::stoi(str);
 		else
 			_num = str[0];
 	}
@@ -41,7 +51,7 @@ Number &Number::operator=(const Number &src)
 	return (*this);
 }
 
-char	*Number::getStr(void) const
+std::string	Number::getStr(void) const
 {
 	return (this->_str);
 }
@@ -53,9 +63,9 @@ double	Number::getNum(void) const
 
 void	Number::toChar(void) const
 {
-	if (_num == std::numeric_limits<float>::infinity()
-		|| _num == -std::numeric_limits<float>::infinity()
-		|| std::isnan(_num))
+	if (std::isnan(_num)
+		|| _num >= std::numeric_limits<int>::max()
+		|| _num <= -std::numeric_limits<int>::min())
 		throw Impossible();
 	if (_num < 32 || _num > 126)
 		throw NonDisplayable();
@@ -64,16 +74,16 @@ void	Number::toChar(void) const
 
 void		Number::toInt(void) const
 {
-	if (_num == std::numeric_limits<float>::infinity()
-		|| _num == -std::numeric_limits<float>::infinity()
-		|| std::isnan(_num))
+	if (std::isnan(_num)
+		|| _num >= std::numeric_limits<int>::max()
+		|| _num <= -std::numeric_limits<int>::min())
 		throw Impossible();
 	std::cout << static_cast<int>(_num) << std::endl;
 }
 
 void	Number::toFloat(void) const
 {
-		float f = static_cast<float>(_num);
+	float f = static_cast<float>(_num);
 	if (f - (int)f != (float)0)
 		std::cerr << f << "f" << std::endl;
 	else

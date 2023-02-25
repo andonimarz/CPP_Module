@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:22:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/23 16:17:05 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/25 09:13:23 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@
 class	Number
 {
 	private:
-		char	*_str;
-		double	_num;
+		std::string	_str;
+		double		_num;
 
 	public:
 		Number();
-		Number(char *str);
+		Number(std::string str);
 		Number(const Number &src);
 		~Number();
 		Number	&operator=(const Number &src);
-		char	*getStr(void) const;
-		double	getNum(void) const;
-		void	toChar(void) const;
-		void	toInt(void) const;
-		void	toFloat(void) const;
-		void	toDouble(void) const;
+		std::string	getStr(void) const;
+		double		getNum(void) const;
+		void		toChar(void) const;
+		void		toInt(void) const;
+		void		toFloat(void) const;
+		void		toDouble(void) const;
 
 	class Impossible : public std::exception
 	{
