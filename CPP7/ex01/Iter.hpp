@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Template.hpp                                       :+:      :+:    :+:   */
+/*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/26 18:07:19 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/26 18:53:36 by amarzana         ###   ########.fr       */
+/*   Created: 2023/02/26 18:52:42 by amarzana          #+#    #+#             */
+/*   Updated: 2023/02/26 19:15:18 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATE_HPP
-# define TEMPLATE_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
-// swap function template
+# include <iostream>
+
 template <typename T>
-void swap(T& a, T& b)
+void	print(T &value)
 {
-	T aux = a;
-	a = b;
-	b = aux;
+	std::cout << value << " ";
 }
 
-// min function template
 template <typename T>
-T min(T a, T b)
+void iter(T* array, int length, void (*func)(T&))
 {
-	return (a < b) ? a : b;
-}
-
-// max function template
-template <typename T>
-T max(T a, T b)
-{
-	return (a > b) ? a : b;
+	for (int i = 0; i < length; i++)
+		func(array[i]);
 }
 
 #endif
