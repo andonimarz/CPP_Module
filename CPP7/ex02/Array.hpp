@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 19:24:01 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/26 19:28:38 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:44:35 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ template<typename T>
 class Array
 {
 	private:
-		unsigned int m_size;
-		T* m_data;
+		unsigned int	_size;
+		T				*_data;
 	public:
-		Array(): m_size(0), m_data(NULL) {}
+		Array(): _size(0), _data(NULL) {}
 		
-		Array(unsigned int n): m_size(n)
+		Array(unsigned int n): _size(n)
 		{
-			m_data = new T[n];
-			std::memset(m_data, 0, n * sizeof(T));
+			_data = new T[n];
+			std::memset(_data, 0, n * sizeof(T));
 		}
 		
-		Array(const Array<T>& other): m_size(other.m_size)
+		Array(const Array<T> &src): _size(src._size)
 		{
-			m_data = new T[m_size];
-			std::memcpy(m_data, other.m_data, m_size * sizeof(T));
+			_data = new T[_size];
+			std::memcpy(_data, src._data, _size * sizeof(T));
 		}
 		
 		Array<T>	&operator=(const Array<T> &src)
@@ -39,26 +39,26 @@ class Array
 			if (this != &src)
 			{
 				Array<T> temp(src);
-				std::swap(m_size, temp.m_size);
-				std::swap(m_data, temp.m_data);
+				std::swap(_size, temp._size);
+				std::swap(_data, temp._data);
 			}
-			return *this;
+			return (*this);
 		}
 		
 		~Array()
 		{
-			delete[] m_data;
+			delete[] _data;
 		}
 		
 		T	&operator[](unsigned int index)
 		{
-			if (index >= m_size) {
+			if (index >= _size)
 				throw std::out_of_range("Array index out of bounds");
-			}
-			return (m_data[index]);
+			return (_data[index]);
 		}
 		
-		unsigned int size() const {
-			return (m_size);
+		unsigned int size() const
+		{
+			return (_size);
 		}
 };
