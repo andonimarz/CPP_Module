@@ -6,89 +6,139 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 19:33:11 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/26 19:46:18 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/27 15:23:42 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Array.hpp"
-
-/* #define MAX_VAL 750
-int main(int, char**)
-{
-	Array<int> numbers(MAX_VAL);
-	int* mirror = new int[MAX_VAL];
-	srand(time(NULL));
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		const int value = rand();
-		numbers[i] = value;
-		mirror[i] = value;
-	}
-	//SCOPE
-	{
-		Array<int> tmp = numbers;
-		Array<int> test(tmp);
-	}
-
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		if (mirror[i] != numbers[i])
-		{
-			std::cerr << "didn't save the same value!!" << std::endl;
-			return 1;
-		}
-	}
-	try
-	{
-		numbers[-2] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	try
-	{
-		numbers[MAX_VAL] = 0;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-
-	for (int i = 0; i < MAX_VAL; i++)
-	{
-		numbers[i] = rand();
-	}
-	delete [] mirror;//
-	return 0;
-} */
-
-#include <iostream>
 
 int main()
 {
-    Array<int> a(5);
-    for (unsigned int i = 0; i < a.size(); ++i) {
-        a[i] = i * i;
-    }
+	{
+		std::cout << "===== CHAR =====" << std::endl;
+		Array<char> a(5);
 
-    Array<int> b(a);
-    b[2] = 100;
+		for (unsigned int i = 0; i < a.size(); ++i)
+			a[i] = i * i + 33;
 
-    Array<int> c;
-    c = b;
+		std::cout << "Array a of 5 char: ";
+		for (unsigned int i = 0; i < a.size(); ++i)
+			std::cout << a[i] << " ";
+		std::cout << std::endl;
 
-    for (unsigned int i = 0; i < c.size(); ++i) {
-        std::cout << c[i] << " ";
-    }
-    std::cout << std::endl;
+		std::cout << "Array b (clone of a): ";
+		Array<char> b(a);
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
 
-    try {
-        std::cout << c[10] << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
+		Array<char> c;
+		std::cout << "Array c (empty):";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
 
-    return 0;
+		std::cout << "=== c = b ===" << std::endl;
+		c = b;
+
+		std::cout << "Array c: ";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== b[2] = 100 = 'd' ===" << std::endl;
+		b[2] = 100;
+
+		std::cout << "Array b (modified): ";
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== Final result ===" << std::endl;
+		std::cout << "Array a: ";
+		for (unsigned int i = 0; i < a.size(); ++i)
+			std::cout << a[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "Array b: ";
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "Array c: ";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== Trying to display c[10] ===" << std::endl;
+		try {
+			std::cout << c[10] << std::endl;
+		} catch (const std::exception& e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+	}
+	{
+		std::cout << std::endl << "===== INT =====" << std::endl;
+		Array<int> a(5);
+
+		for (unsigned int i = 0; i < a.size(); ++i)
+			a[i] = i * i;
+
+		std::cout << "Array a of 5 int: ";
+		for (unsigned int i = 0; i < a.size(); ++i)
+			std::cout << a[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "Array b (clone of a): ";
+		Array<int> b(a);
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
+
+		Array<int> c;
+		std::cout << "Array c (empty):";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== c = b ===" << std::endl;
+		c = b;
+
+		std::cout << "Array c: ";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== b[2] = 100 ===" << std::endl;
+		b[2] = 100;
+
+		std::cout << "Array b (modified): ";
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== Final result ===" << std::endl;
+		std::cout << "Array a: ";
+		for (unsigned int i = 0; i < a.size(); ++i)
+			std::cout << a[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "Array b: ";
+		for (unsigned int i = 0; i < b.size(); ++i)
+			std::cout << b[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "Array c: ";
+		for (unsigned int i = 0; i < c.size(); ++i)
+			std::cout << c[i] << " ";
+		std::cout << std::endl;
+
+		std::cout << "=== Trying to display c[10] ===" << std::endl;
+		try {
+			std::cout << c[10] << std::endl;
+		} catch (const std::exception& e) {
+			std::cerr << "Exception: " << e.what() << std::endl;
+		}
+	}
+	return (0);
 }

@@ -6,12 +6,11 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 19:24:01 by amarzana          #+#    #+#             */
-/*   Updated: 2023/02/26 19:44:35 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/02/27 15:17:36 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <exception>
-#include <cstring>
+#include <iostream>
 
 template<typename T>
 class Array
@@ -38,6 +37,7 @@ class Array
 		{
 			if (this != &src)
 			{
+				delete (_data);
 				Array<T> temp(src);
 				std::swap(_size, temp._size);
 				std::swap(_data, temp._data);
