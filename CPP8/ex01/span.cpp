@@ -6,13 +6,14 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 10:37:33 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/02 12:43:50 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/04 11:58:47 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span(){
+Span::Span()
+{
 	std::cout << "Span constructor" << std::endl;
 }
 
@@ -26,7 +27,8 @@ Span::Span(const Span &src) : _N(src._N), _v(src._v)
 	std::cout << "Span copy constructor" << std::endl;
 }
 
-Span::~Span(){
+Span::~Span()
+{
 	std::cout << "Span destructor" << std::endl;
 }
 
@@ -61,12 +63,14 @@ unsigned int	Span::shortestSpan(void) const
 	std::vector<int> sorted_nums(_v);
 	std::sort(sorted_nums.begin(), sorted_nums.end());
 	int min_span = std::numeric_limits<int>::max();
-	for (std::vector<int>::size_type i = 1; i < sorted_nums.size(); ++i)
+	for (unsigned int i = 1; i < sorted_nums.size(); ++i)
 	{
 		int span = sorted_nums[i] - sorted_nums[i - 1];
 		if (span < min_span)
 			min_span = span;
 	}
+	if (this->_N == 1)
+		min_span = 0;
 	return (min_span);
 }
 

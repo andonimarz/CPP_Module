@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 10:37:27 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/02 12:45:23 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/04 11:50:48 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Span
 	private:
 		unsigned int		_N;
 		std::vector<int> 	_v;
+
 	public:
 		Span();
 		Span(unsigned int N);
