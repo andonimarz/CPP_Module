@@ -6,14 +6,14 @@
 #    By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 10:51:35 by amarzana          #+#    #+#              #
-#    Updated: 2023/03/02 12:50:29 by amarzana         ###   ########.fr        #
+#    Updated: 2023/03/04 09:15:24 by amarzana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 
 SRC =	main.cpp	\
-		MutantStack.cpp
+		mutantstack.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

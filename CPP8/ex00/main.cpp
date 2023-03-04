@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 09:00:12 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/02 10:29:48 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/04 11:35:58 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 //	If you want the data of an iterator, you can dereference it using the '*' operator.
 
-//	It's important to note that the element pointed to by the end() iterator is not a valid 
-//		element in the container, and should not be dereferenced. Instead, it serves as a 
-//		sentinel value that marks the end of the range of elements in the container.
+//	The element pointed to by the end() iterator is not a valid element in the container
+//		and should not be dereferenced. Instead, it serves as a sentinel value that marks 
+//		the end of the range of elements in the container.
 
 //	std::distance(it1, it2) algorithm will return the number of positions between its first and 
 //		second argument. In this case between the first element and the iterator returned 
