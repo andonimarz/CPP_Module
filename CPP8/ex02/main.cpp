@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 12:49:30 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/04 11:29:42 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/04 12:02:09 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,3 +103,29 @@ int main()
 	}
 		return (0);
 }
+
+/* int main()
+{
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+	std::cout << *it << std::endl;
+	++it;
+	}
+	std::stack<int> s(mstack);
+	return 0;
+} */
