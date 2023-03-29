@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:23:09 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 10:23:18 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:44:39 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
 			std::getline(iss, date, '|');
 			if (date == "date ")
 				continue;
-			if (!data.checkDate(date))
+			if (!data.checkDate(date, 1))
 			{
 				std::cerr << "Error: bad input => " << line << std::endl;
 				continue;

@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:01:30 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 10:23:27 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/29 19:03:09 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,17 @@ BitcoinExchange::BitcoinExchange(std::string fileName)
 	{
 		// Split the line into date and amount
 		std::string date = line.substr(0, line.find(','));
+		std::string value = line.substr(line.find(',') + 1);
 		if (date == "date")
 			continue;
-		double amount = std::atof(line.substr(line.find(',') + 1).c_str());
+		if (!checkDate(date, 0) || !isNumeric(value, 0))
+		{
+			file.close();
+			_data.clear();
+			std::cout << "Error: bad csv file" << std::endl;
+			exit(0);
+		}
+		double amount = std::atof(value.c_str());
 		
 		// Store the data in the map
 		_data[date] = amount;
@@ -63,30 +71,30 @@ void BitcoinExchange::printData() const
 		std::cout << it->first << ": " << it->second << "\n";
 }
 
-int BitcoinExchange::checkDate(std::string date) const
+int BitcoinExchange::checkDate(std::string date, int mode) const
 {
 	std::istringstream iss(date);
 	std::string year, month, day;
 	double num;
-
-	if (date < this->_data.begin()->first)
+	
+	if (mode == 1 && date < this->_data.begin()->first)
 		return 0;
 	std::getline(iss, year, '-');
-	if (year.length() != 4  || !isNumeric(year))
+	if (year.length() != 4  || !isNumeric(year, 1))
 		return 0;
 	num = atof(year.c_str());
 	if (num < 2009)
 		return 0;
 
 	std::getline(iss, month, '-');
-	if (month.length() != 2  || !isNumeric(month))
+	if (month.length() != 2  || !isNumeric(month, 1))
 		return 0;
 	num = atof(month.c_str());
 	if (num < 1 || num > 12)
 		return 0;
 
 	std::getline(iss, day, ' ');
-	if (day.length() != 2  || !isNumeric(day))
+	if (day.length() != 2  || !isNumeric(day, 1))
 		return 0;	
 	num = atof(day.c_str());
 	if (num < 1 || num > 31)
@@ -122,11 +130,21 @@ std::string BitcoinExchange::findDate(const std::string &date) const
 	return result;
 }
 
-bool isNumeric(const std::string& str) 
+bool isNumeric(const std::string& str, int mode) 
 {
+	int count = 0;
 	for (std::string::const_iterator it = str.begin(); it != str.end(); ++it)
-		if (!isdigit(*it))
+	{
+		if (mode == 0)
+		{
+			if ( *it == '.')
+				count++;
+			if ((!isdigit(*it) && *it != '.') || count > 1)
+				return false;
+		}
+		if (mode == 1 && !isdigit(*it))
 			return false;
+	}
 	return true;
 }
 

@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:26:12 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 13:20:43 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:26:43 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 		try
 		{
 			str = formatStr(str);
-			//std::cout << "STR = " << str << std::endl;
 			std::cout << rpnJob(str) << std::endl;
 		}
 		catch(const std::exception &e)

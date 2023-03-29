@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:26:18 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 11:56:07 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:27:19 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int rpnJob(std::string str)
 			stack.push(str[i] - '0');
 		else
 		{
-			if (stack.size() != 2)
+			if (stack.size() <= 1)
 				throw std::out_of_range("Error");
 			int b = stack.top();
 			stack.pop();
