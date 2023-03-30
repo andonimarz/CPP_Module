@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:01:30 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 19:03:09 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/30 10:29:04 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ BitcoinExchange::BitcoinExchange(std::string fileName)
 		// Store the data in the map
 		_data[date] = amount;
 	}
+	if (_data.size() == 0)
+	{
+		file.close();
+		_data.clear();
+		std::cout << "Error: empty csv file" << std::endl;
+		exit(0);
+	}
 	file.close();
 }
 
@@ -66,8 +73,7 @@ std::map<std::string, double> BitcoinExchange::getData() const
 
 void BitcoinExchange::printData() const
 {
-	std::map<std::string, double>::const_iterator it = _data.begin();
-	for (it; it != _data.end(); ++it)
+	for (std::map<std::string, double>::const_iterator it = _data.begin(); it != _data.end(); ++it)
 		std::cout << it->first << ": " << it->second << "\n";
 }
 
@@ -100,8 +106,6 @@ int BitcoinExchange::checkDate(std::string date, int mode) const
 	if (num < 1 || num > 31)
 		return 0;
 
-	//std::cout << "Year: " << year << ", month: " << month << ", day: " << day << std::endl;
-
 	return 1;
 }
 
@@ -110,7 +114,7 @@ double BitcoinExchange::exchange(std::string date, double value) const
 	std::string index;
 
 	index = findDate(date);
-	//std::cout <<"(INDEX = " << index << ") ";
+	// std::cout << "(used date: " << index << ")";
 	return this->_data.find(index)->second * value;
 }
 

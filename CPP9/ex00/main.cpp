@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:23:09 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 18:44:39 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/30 10:24:50 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 	
 	// Creating the BitcoinExchange object
 	BitcoinExchange data("data.csv");
-
 	// Opening the input file and checking it
 	std::string input = argv[1];
 	std::ifstream file(input);

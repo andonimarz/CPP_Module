@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:21:35 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 18:11:24 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:43:18 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void PmergeMe::throwExcep(void)
 {
 	deq.clear();
 	vec.clear();
-	throw std::out_of_range("Error");
+	throw std::invalid_argument("Error");
 }
 
 PmergeMe::PmergeMe(char **argv)
@@ -24,6 +24,8 @@ PmergeMe::PmergeMe(char **argv)
 	for (size_t i = 1; argv[i]; i++)
 	{
 		std::string str = argv[i];
+		if (str.size() == 0)
+			throwExcep();
 		for (size_t j = 0; j < str.size(); j++)
 			if(!isdigit(argv[i][j]))
 				throwExcep();
@@ -36,6 +38,16 @@ PmergeMe::PmergeMe(char **argv)
 }
 
 PmergeMe::~PmergeMe() {}
+
+const std::deque<int> &PmergeMe::getDeq() const
+{
+	return deq;
+}
+
+const std::vector<int> &PmergeMe::getVec() const
+{
+	return vec;
+}
 
 void PmergeMe::printDeq() const
 {
@@ -58,31 +70,35 @@ void PmergeMe::algorithm(void)
 
 	if (vec.size() <= 7)
 	{
-		timeVec = clock();
+		double startTime = clock();
 		insertVec(this->vec);
-		timeVec = (clock() - timeVec) * 1000 / CLOCKS_PER_SEC;
+		double endTime = clock();
+		timeVec = (endTime - startTime) * 1000 / CLOCKS_PER_SEC;
 
-		timeDeq = clock();
+		startTime = clock();
 		insertDeq(this->deq);
-		timeDeq = (clock() - timeDeq) * 1000 / CLOCKS_PER_SEC;
+		endTime = clock();
+		timeDeq = (endTime - startTime) * 1000 / CLOCKS_PER_SEC;
 	}
 	else
 	{
-		timeVec = clock();
+		double startTime = clock();
 		mergeVec(this->vec);
-		timeVec = (clock() - timeVec) * 1000 / CLOCKS_PER_SEC;
+		double endTime = clock();
+		timeVec = (endTime - startTime) * 1000 / CLOCKS_PER_SEC;
 
-		timeDeq = clock();
+		startTime = clock();
 		mergeDeq(this->deq);
-		timeDeq = (clock() - timeDeq) * 1000 / CLOCKS_PER_SEC;
+		endTime = clock();
+		timeDeq = (endTime - startTime) * 1000 / CLOCKS_PER_SEC;
 	}
 
 	std::cout << "After: ";
 	this->printVec();
 	std::cout << "Time to process a range of " << vec.size() \
-		<< " elements with std::vector : " << timeVec << " us" << std::endl;
+		<< " elements with std::vector : " << timeVec << " ms" << std::endl;
 	std::cout << "Time to process a range of " << deq.size() \
-		<< " elements with std::deque : " << timeDeq << " us" << std::endl;
+		<< " elements with std::deque : " << timeDeq << " ms" << std::endl;
 		
 }
 
@@ -110,7 +126,6 @@ void PmergeMe::insertDeq(std::deque<int> &deq)
 
 void PmergeMe::mergeVec(std::vector<int> &vec)
 {
-	typedef typename std::vector<int>::iterator iterator;
 	std::vector<int> leftHalf;
 	std::vector<int> rightHalf;
 
@@ -118,7 +133,7 @@ void PmergeMe::mergeVec(std::vector<int> &vec)
 		return;
 
 	size_t mid = vec.size() / 2;
-	iterator midIter = vec.begin() + mid;
+	std::vector<int>::iterator midIter = vec.begin() + mid;
 
 	leftHalf.insert(leftHalf.end(), vec.begin(), midIter);
 	rightHalf.insert(rightHalf.end(), midIter, vec.end());
@@ -127,8 +142,8 @@ void PmergeMe::mergeVec(std::vector<int> &vec)
 	mergeVec(rightHalf);
 
 	vec.clear();
-	iterator leftIter = leftHalf.begin();
-	iterator rightIter = rightHalf.begin();
+	std::vector<int>::iterator leftIter = leftHalf.begin();
+	std::vector<int>::iterator rightIter = rightHalf.begin();
 
 	while (leftIter != leftHalf.end() && rightIter != rightHalf.end()) {
 		if (*leftIter < *rightIter)
@@ -146,7 +161,6 @@ void PmergeMe::mergeVec(std::vector<int> &vec)
 
 void PmergeMe::mergeDeq(std::deque<int> &deq)
 {
-	typedef typename std::deque<int>::iterator iterator;
 	std::deque<int> leftHalf;
 	std::deque<int> rightHalf;
 
@@ -154,7 +168,7 @@ void PmergeMe::mergeDeq(std::deque<int> &deq)
 		return;
 
 	size_t mid = deq.size() / 2;
-	iterator midIter = deq.begin() + mid;
+	std::deque<int>::iterator midIter = deq.begin() + mid;
 
 	leftHalf.insert(leftHalf.end(), deq.begin(), midIter);
 	rightHalf.insert(rightHalf.end(), midIter, deq.end());
@@ -163,8 +177,8 @@ void PmergeMe::mergeDeq(std::deque<int> &deq)
 	mergeDeq(rightHalf);
 
 	deq.clear();
-	iterator leftIter = leftHalf.begin();
-	iterator rightIter = rightHalf.begin();
+	std::deque<int>::iterator leftIter = leftHalf.begin();
+	std::deque<int>::iterator rightIter = rightHalf.begin();
 
 	while (leftIter != leftHalf.end() && rightIter != rightHalf.end()) {
 		if (*leftIter < *rightIter)

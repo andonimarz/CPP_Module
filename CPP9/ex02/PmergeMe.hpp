@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:14:44 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 18:07:07 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/30 09:11:04 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class PmergeMe
 	public:
 		PmergeMe(char **argv);
 		~PmergeMe();
+		const std::deque<int> &getDeq() const;
+		const std::vector<int> &getVec() const;
 		void	printVec() const;
 		void	printDeq() const;
 		void	throwExcep(void);

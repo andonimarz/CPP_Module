@@ -6,7 +6,7 @@
 /*   By: amarzana <amarzana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 10:26:18 by amarzana          #+#    #+#             */
-/*   Updated: 2023/03/29 18:27:19 by amarzana         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:49:29 by amarzana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ int rpnJob(std::string str)
             }
 		}
 	}
+	if (stack.size() > 1)
+		throw std::out_of_range("Error");
 	return stack.top();
 }
